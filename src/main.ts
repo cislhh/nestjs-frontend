@@ -4,6 +4,9 @@ import App from "./App.vue";
 import { setupRouter } from "./router";
 import { setupStore } from "./stroe";
 
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
+
 function bootstrap() {
   const app = createApp(App);
 
@@ -12,6 +15,8 @@ function bootstrap() {
 
   // store
   setupStore(app);
+
+  app.use(ElementPlus);
 
   app.mount("#app");
 }
