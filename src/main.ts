@@ -1,8 +1,19 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
-import router from "@/router/index.ts";
+import { setupRouter } from "./router";
+import { setupStore } from "./stroe";
 
-const app = createApp(App);
-app.use(router); // 2.引用router
-app.mount("#app");
+function bootstrap() {
+  const app = createApp(App);
+
+  // router
+  setupRouter(app);
+
+  // store
+  setupStore(app);
+
+  app.mount("#app");
+}
+
+bootstrap();
