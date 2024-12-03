@@ -42,11 +42,11 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     const res = response.data;
-    const resCode = response.status;
+    const statusCode = res.statusCode;
     // 如果返回的状态码不是200，则认为是失败的
-    if (resCode !== 200) {
+    if (statusCode !== 200) {
       ElMessage({
-        message: errorCodeMapping[resCode] || "未知错误",
+        message: errorCodeMapping[statusCode] || "未知错误",
         type: "error",
       });
       return Promise.reject(new Error(res.message || "Error"));
