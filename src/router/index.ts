@@ -11,6 +11,10 @@ const routes = [
     path: "/reg",
     component: () => import("@/views/login/reg.vue"),
   },
+  {
+    path: "/home",
+    component: () => import("@/views/home/index.vue"),
+  },
 ] as RouteRecordRaw[];
 
 const router = createRouter({
