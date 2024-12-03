@@ -12,8 +12,13 @@ const routes = [
     component: () => import("@/views/login/reg.vue"),
   },
   {
-    path: "/home",
+    path: "/",
     component: () => import("@/views/home/index.vue"),
+    // redirect: "/",
+  },
+  {
+    path: "/users",
+    component: () => import("@/views/users/index.vue"),
   },
 ] as RouteRecordRaw[];
 
