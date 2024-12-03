@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-menu
-      default-active="2"
+      default-active="/"
       class="el-menu-vertical-demo"
       @select="itemSelect"
     >
@@ -27,8 +27,9 @@ import {
 import { useRouter } from "vue-router";
 const router = useRouter();
 const itemSelect = (key: string) => {
-  console.log(key);
+  // console.log(key);
   router.push(key);
+  // console.log(, "data----useRouter");
 };
 </script>
 
